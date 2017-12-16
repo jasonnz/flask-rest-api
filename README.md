@@ -1,6 +1,6 @@
 # REST API
 
-#INSTALLATION 
+# INSTALLATION 
 
 pip install Flask
 python3 app.py
