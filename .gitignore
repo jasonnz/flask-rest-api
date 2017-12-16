@@ -1,0 +1,8 @@
+.DS_Store
+data*
+__pycache__
+.vscode
+venz
+create_tables1.py
+db.py
+*.pyc
