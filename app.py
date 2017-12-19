@@ -17,10 +17,6 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.secret_key = 'jose'
 api = Api(app)
 
-@app.before_first_request
-def create_tables():
-    db.create_all()
-
 jwt = JWT(app, authenticate, identity) #/auth
 
 api.add_resource(Store,  '/store/<string:name>')
@@ -29,7 +25,9 @@ api.add_resource(ItemList, '/items')
 api.add_resource(StoreList, '/stores')
 api.add_resource(UserRegister, '/register')
 
-# main is the file that is run
+# main is the file that is run when running form the command line
+# But it is different through uwsgi
+# This is here because of circular imports
 if __name__ == '__main__':
 # if __name__ == 'app':
     from db import db
