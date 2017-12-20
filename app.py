@@ -1,3 +1,4 @@
+import os
 import sys
 
 from flask import Flask
@@ -12,7 +13,7 @@ from resources.store import Store, StoreList
 print('Python version = ', sys.version)
 
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///data.db'
+app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DATABASE_URL', 'sqlite:///data.db')
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.secret_key = 'jose'
 api = Api(app)
