@@ -1,12 +1,5 @@
-# REST API
+# Stores REST API
 
-# INSTALLATION 
+This is built with Flask, Flask-REFTful, Flask-JWT and Flask-SQLAlchemy
 
-pip install Flask
-python3 app.py
-
-# DESCRIPTION
-
-## IMPLEMENTATION
-
-This project is implemented using Flask, which is a REST API for a store
+Deployed on Heroku
